@@ -4,3 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+rocket = { version = "0.5.1", features = ["json"] }
+reqwest = "0.12.4"
+rustemon = "3.4.1"
+log = "0.4.21"
+regex = "1.10.4"
