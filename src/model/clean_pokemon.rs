@@ -7,6 +7,7 @@ pub struct CleanPokemon {
     pub name: String,
     pub description: String,
     pub habitat: String,
+    #[serde(rename = "isLegendary")]
     pub is_legendary: bool,
 }
 
