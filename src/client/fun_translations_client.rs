@@ -14,7 +14,11 @@ impl FunTranslationsClient {
         })
     }
 
-    pub async fn translate<'a>(self: Self, translation: &'a str, text: &'a str) -> Result<TranslationResponse, Error> {
+    pub async fn translate<'a>(
+        self: &Self,
+        translation: &'a str,
+        text: &'a str,
+    ) -> Result<TranslationResponse, Error> {
         let mut url = self
             .url
             .join("translate/")?

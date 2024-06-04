@@ -14,7 +14,7 @@ impl PokeApiClient {
         })
     }
 
-    pub async fn get_pokemon_species(self: Self, name: &str) -> Result<PokemonSpecies, Error> {
+    pub async fn get_pokemon_species(self: &Self, name: &str) -> Result<PokemonSpecies, Error> {
         let url = self.url.join("api/v2/pokemon-species/")?.join(name)?;
 
         Ok(reqwest::get(url)
