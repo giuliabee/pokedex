@@ -1,11 +1,5 @@
 #[derive(
-    Default,
-    Debug,
-    Clone,
-    PartialEq,
-    Eq,
-    rocket::serde::Serialize,
-    rocket::serde::Deserialize
+    Default, Debug, Clone, PartialEq, Eq, rocket::serde::Serialize, rocket::serde::Deserialize,
 )]
 #[serde(crate = "rocket::serde")]
 pub struct TranslationResponse {
@@ -15,13 +9,7 @@ pub struct TranslationResponse {
 }
 
 #[derive(
-    Default,
-    Debug,
-    Clone,
-    PartialEq,
-    Eq,
-    rocket::serde::Serialize,
-    rocket::serde::Deserialize
+    Default, Debug, Clone, PartialEq, Eq, rocket::serde::Serialize, rocket::serde::Deserialize,
 )]
 #[serde(crate = "rocket::serde")]
 struct TranslationError {
@@ -30,13 +18,7 @@ struct TranslationError {
 }
 
 #[derive(
-    Default,
-    Debug,
-    Clone,
-    PartialEq,
-    Eq,
-    rocket::serde::Serialize,
-    rocket::serde::Deserialize
+    Default, Debug, Clone, PartialEq, Eq, rocket::serde::Serialize, rocket::serde::Deserialize,
 )]
 #[serde(crate = "rocket::serde")]
 struct Total {
@@ -44,13 +26,7 @@ struct Total {
 }
 
 #[derive(
-    Default,
-    Debug,
-    Clone,
-    PartialEq,
-    Eq,
-    rocket::serde::Serialize,
-    rocket::serde::Deserialize
+    Default, Debug, Clone, PartialEq, Eq, rocket::serde::Serialize, rocket::serde::Deserialize,
 )]
 #[serde(crate = "rocket::serde")]
 struct Translation {
