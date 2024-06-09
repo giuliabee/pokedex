@@ -10,3 +10,7 @@ rustemon = "3.4.1"
 log = "0.4.21"
 regex = "1.10.4"
 url = "2.5.0"
+
+[dev-dependencies]
+tokio = "1.38.0"
+mockito = "1.4.0"

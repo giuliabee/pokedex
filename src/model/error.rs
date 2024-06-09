@@ -1,6 +1,7 @@
+use rocket::Responder;
 use url::ParseError;
 
-#[derive(Responder)]
+#[derive(Responder, Debug, Eq, PartialEq)]
 pub enum Error {
     #[response(status = 404)]
     PokemonNotFound(&'static str),

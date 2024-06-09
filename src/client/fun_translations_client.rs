@@ -7,6 +7,8 @@ use crate::model::error::Error::{
 };
 use crate::model::translation::TranslationResponse;
 
+pub static FUN_TRANSLATIONS_BASE_URL: &str = "https://api.funtranslations.com/";
+
 pub struct FunTranslationsClient {
     url: Url,
 }
@@ -49,5 +51,28 @@ impl FunTranslationsClient {
                 "Error calling Fun Translations API",
             )),
         }
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use tokio;
+
+    use crate::client::fun_translations_client::{
+        FUN_TRANSLATIONS_BASE_URL, FunTranslationsClient,
+    };
+
+    #[tokio::test]
+    #[ignore]
+    // this test is ignored by default because it is subject to a 10 requests per hour rate limit
+    async fn translate() {
+        let client = FunTranslationsClient::new(FUN_TRANSLATIONS_BASE_URL)
+            .expect("Could not instantiate Fun Translations API client");
+        let text = "When several of these POKéMON gather, their electricity could build and cause lightning storms.";
+        let response = client
+            .translate("yoda", text)
+            .await
+            .expect("Fun Translations request failed");
+        assert_eq!(response.get_translated_text().unwrap(), "When several of these pokémon gather,And cause lightning storms,  their electricity could build.")
     }
 }

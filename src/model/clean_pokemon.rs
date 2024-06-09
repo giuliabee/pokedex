@@ -1,7 +1,9 @@
 use regex::Regex;
 use rustemon::model::pokemon::PokemonSpecies;
 
-#[derive(Default, Debug, Clone, PartialEq, Eq, rocket::serde::Serialize)]
+#[derive(
+    Default, Debug, Clone, PartialEq, Eq, rocket::serde::Serialize, rocket::serde::Deserialize,
+)]
 #[serde(crate = "rocket::serde")]
 pub struct CleanPokemon {
     pub name: String,
