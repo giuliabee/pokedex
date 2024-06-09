@@ -46,6 +46,7 @@ async fn pokemon_translated(
 
     Ok(Json(clean_pokemon))
 }
+
 pub fn get_rocket_router(
     poke_api_base_url: String,
     fun_translations_base_url: String,
